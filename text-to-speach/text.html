@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Reader with AI Voice</title>
+    <style>
+			#listen-button {
+				position: relative;
+				cursor: pointer;
+			}
+			#listen-button .tooltip {
+				visibility: hidden;
+				background-color: black;
+				color: #fff;
+				text-align: center;
+				border-radius: 5px;
+				padding: 5px;
+				position: absolute;
+				z-index: 1;
+				bottom: 125%; /* Position above the icon */
+				left: 50%;
+				transform: translateX(-50%);
+				opacity: 0;
+				transition: opacity 0.3s;
+			}
+			#listen-button:hover .tooltip {
+				visibility: visible;
+				opacity: 1;
+			}
+    </style>
+</head>
+<body>
+<div id="text-container">
+    <p id="text-to-read">This is some random text that will be read aloud by the AI voice when you click the button below.</p>
+</div>
+<div id="listen-button">
+    <img src="speaker_icon.png" alt="Listen Icon">
+    <div class="tooltip">Read Aloud</div>
+</div>
+<select id="voice-selection"></select>
+
+<script src="text.js"></script>
+</body>
+</html>
