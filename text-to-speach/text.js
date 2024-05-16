@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Fetch and display available voices
   const fetchVoices = async () => {
-    const response = await fetch('https://texttospeech.googleapis.com/v1/voices?key=AIzaSyAwoO7sui3i_5YDTivr62Tw2kebFIG6dLw');
+    const response = await fetch('https://texttospeech.googleapis.com/v1/voices?key=API_KEY');
     const data = await response.json();
     const voices = data.voices;
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   listenButton.addEventListener('click', async () => {
     const selectedVoice = voiceSelection.value;
-    const response = await fetch('https://texttospeech.googleapis.com/v1/text:synthesize?key=AIzaSyAwoO7sui3i_5YDTivr62Tw2kebFIG6dLw', {
+    const response = await fetch('https://texttospeech.googleapis.com/v1/text:synthesize?key=API_KEY', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
